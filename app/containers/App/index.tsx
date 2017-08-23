@@ -3,13 +3,16 @@ import Head from 'next/head';
 
 export namespace App {
   export interface Props {
-    title: string;
+    title: string,
+    children: JSX.Element
   }
   export interface State { }
 }
 
-export class App extends React.Component<App.Props, App.State> {
-  render() {
+export default function App ({
+  title,
+  children
+}: App.Props): JSX.Element {
     return (
       <div>
         <Head>
@@ -20,6 +23,6 @@ export class App extends React.Component<App.Props, App.State> {
           {this.props.children}
         </div>
       </div>
-    );
+    )
   }
-}
+

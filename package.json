@@ -2,15 +2,15 @@
   "name": "nextjs-typescript-boilerplate",
   "version": "1.0.0",
   "scripts": {
-    "prebuild": "gulp && tsc && cp -R static dist/",
-    "build": "next build dist",
-    "predev": "gulp && tsc && cp -R static dist/",
-    "dev": "concurrently \"tsc --watch\" \"next dist\"",
-    "start": "next start dist",
-    "tslint": "tslint -c tslint.json -p tsconfig.json"
+    "build": "next build app",
+    "dev": "next app",
+    "start": "next start app",
+    "lint": "tslint --type-check -c tslint.json -p tsconfig.json",
+    "lint:watch": "tslint --type-check -c tslint.json -p tsconfig.json",
+    "lint:fix": "yarn run lint -- --fix"
   },
   "dependencies": {
-    "next": "beta",
+    "next": "https://github.com/nelak/next.js.git#v3-beta",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "typescript": "^2.3.4"
@@ -20,6 +20,7 @@
     "@types/react": "^15.0.29",
     "concurrently": "^3.4.0",
     "gulp": "^3.9.1",
-    "tslint": "^5.4.3"
+    "tslint": "^5.4.3",
+    "tslint-config-standard": "^6.0.1"
   }
 }

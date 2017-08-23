@@ -1,8 +1,6 @@
-import * as React from 'react';
+import * as React from 'react'
 
-import {
-  App,
-} from '../components';
+import App from '../components'
 
 const style = `
   img {
@@ -19,24 +17,23 @@ const style = `
     justify-content: center;
     height: 100vh;
   }
-`;
+`
 
 export namespace Index {
   export interface Props { }
   export interface State {
-    title: string;
+    title: string
   }
 }
 
 export default class Index extends React.Component<Index.Props, Index.State> {
-  constructor(props: Index.Props) {
-    super(props);
+  constructor (pro ps: Index.Props) {
+    super(props)
     this.state = {
-      title: 'Pueue',
-    };
-  }
+      title: 'Pueue'
+    }  }
 
-  render() {
+  render( ) {
     return (
       <App title={this.state.title}>
         <div className='myDiv'>
@@ -45,6 +42,5 @@ export default class Index extends React.Component<Index.Props, Index.State> {
         </div>
         <style>{style}</style>
       </App>
-    );
-  }
+     )  }
 }
