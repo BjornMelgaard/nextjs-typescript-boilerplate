@@ -1,8 +1,9 @@
+import * as React from "react"
 import Head from 'next/head';
 
 export interface AppProps {
   title: string,
-  children: JSX.Element
+  children: JSX.Element[]
 }
 
 export default function App ({

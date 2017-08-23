@@ -1,3 +1,4 @@
+import * as React from "react"
 import App from '../containers/App'
 
 const style = `
@@ -17,7 +18,7 @@ const style = `
   }
 `
 
-const title = 'asdf'
+const title: string = 'asdf'
 
 export default function Index (): JSX.Element {
   return (
