@@ -4,7 +4,16 @@
     "target": "es2015",
     "jsx": "react",
     "strict": true,
-    "allowJs": true
+    "allowJs": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "baseUrl": "app",
+    "paths": {
+      "*": [
+        "node_modules/*"
+      ]
+    }
   },
   "include": [
     "app/**/*"

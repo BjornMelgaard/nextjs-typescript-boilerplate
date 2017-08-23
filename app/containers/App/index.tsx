@@ -1,28 +1,24 @@
-import * as React from 'react';
 import Head from 'next/head';
 
-export namespace App {
-  export interface Props {
-    title: string,
-    children: JSX.Element
-  }
-  export interface State { }
+export interface AppProps {
+  title: string,
+  children: JSX.Element
 }
 
 export default function App ({
   title,
   children
-}: App.Props): JSX.Element {
-    return (
+}: AppProps): JSX.Element {
+  return (
+    <div>
+      <Head>
+        <title>{title}</title>
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+      </Head>
       <div>
-        <Head>
-          <title>{this.props.title}</title>
-          <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-        </Head>
-        <div>
-          {this.props.children}
-        </div>
+        {children}
       </div>
-    )
-  }
+    </div>
+  )
+}
 

@@ -2,13 +2,20 @@
 # yarn lockfile v1
 
 
-"@types/node@^7.0.31":
-  version "7.0.32"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.32.tgz#6afe6c66520a4c316623a14aef123908d01b4bba"
+"@types/next@^2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@types/next/-/next-2.4.2.tgz#62d4e0a730ea4b9b4db25b3554d92e0e89b9c0d0"
+  dependencies:
+    "@types/node" "*"
+    "@types/react" "*"
 
-"@types/react@^15.0.29":
-  version "15.0.30"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-15.0.30.tgz#a4e153e1e83fbef341fc9aad1a7d62bf8c1f52a3"
+"@types/node@*", "@types/node@^8.0.24":
+  version "8.0.24"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.24.tgz#06c580084d9add1fb40c1510ef0b448961246fb1"
+
+"@types/react@*", "@types/react@^16.0.5":
+  version "16.0.5"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.5.tgz#d713cf67cc211dea20463d2a0b66005c22070c4b"
 
 abbrev@1:
   version "1.1.0"
@@ -3967,9 +3974,9 @@ tslint-eslint-rules@^4.0.0:
     tslib "^1.0.0"
     tsutils "^1.4.0"
 
-tslint@^5.4.3:
-  version "5.4.3"
-  resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.4.3.tgz#761c8402b80e347b7733a04390a757b253580467"
+tslint@^5.6.0:
+  version "5.6.0"
+  resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.6.0.tgz#088aa6c6026623338650b2900828ab3edf59f6cf"
   dependencies:
     babel-code-frame "^6.22.0"
     colors "^1.1.2"
@@ -3980,15 +3987,17 @@ tslint@^5.4.3:
     resolve "^1.3.2"
     semver "^5.3.0"
     tslib "^1.7.1"
-    tsutils "^2.3.0"
+    tsutils "^2.7.1"
 
 tsutils@^1.4.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-1.9.1.tgz#b9f9ab44e55af9681831d5f28d0aeeaf5c750cb0"
 
-tsutils@^2.3.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-2.4.0.tgz#ad4ce6dba0e5a3edbddf8626b7ca040782189fea"
+tsutils@^2.7.1:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-2.8.1.tgz#3771404e7ca9f0bedf5d919a47a4b1890a68efff"
+  dependencies:
+    tslib "^1.7.1"
 
 tty-browserify@0.0.0:
   version "0.0.0"
@@ -4004,9 +4013,9 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
 
-typescript@^2.3.4:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.4.0.tgz#aef5a8d404beba36ad339abf079ddddfffba86dd"
+typescript@^2.4.2:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.5.1.tgz#ce7cc93ada3de19475cc9d17e3adea7aee1832aa"
 
 ua-parser-js@^0.7.9:
   version "0.7.13"

@@ -1,6 +1,4 @@
-import * as React from 'react'
-
-import App from '../components'
+import App from '../containers/App'
 
 const style = `
   img {
@@ -19,28 +17,16 @@ const style = `
   }
 `
 
-export namespace Index {
-  export interface Props { }
-  export interface State {
-    title: string
-  }
-}
+const title = 'asdf'
 
-export default class Index extends React.Component<Index.Props, Index.State> {
-  constructor (pro ps: Index.Props) {
-    super(props)
-    this.state = {
-      title: 'Pueue'
-    }  }
-
-  render( ) {
-    return (
-      <App title={this.state.title}>
-        <div className='myDiv'>
-          <img src='/static/pueue.png' />
-          <h1>Welcome to Next.js + Typescript Boilerplate!!!</h1>
-        </div>
-        <style>{style}</style>
-      </App>
-     )  }
+export default function Index (): JSX.Element {
+  return (
+    <App title={title}>
+      <div className='myDiv'>
+        <img src='/static/pueue.png' />
+        <h1>Welcome to Next.js + Typescript Boilerplate!!!</h1>
+      </div>
+      <style>{style}</style>
+    </App>
+  )
 }
