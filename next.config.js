@@ -1,5 +1,4 @@
 const path = require('path')
-const nextPagesDir = path.join(__dirname, 'app', 'pages')
 
 const babelLoader = {
   loader: 'babel-loader',
@@ -23,7 +22,8 @@ const typescriptLoader = {
   exclude: /node_modules/,
   include: [
     __dirname,
-    nextPagesDir
+    path.join(__dirname, 'pages'),
+    path.join(__dirname, 'app'),
   ]
 }
 

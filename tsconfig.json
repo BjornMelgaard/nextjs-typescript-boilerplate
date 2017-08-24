@@ -8,14 +8,11 @@
     "strict": true,
     "moduleResolution": "node",
     "sourceMap": true,
-    "baseUrl": "app",
+    "baseUrl": "./",
     "paths": {
-      "*": [
-        "node_modules/*"
-      ]
+      "pages/*": ["./pages/*"]
+      "components/*": ["app/components/*"],
+      "containers/*": ["app/containers/*"],
     }
-  },
-  "include": [
-    "app/**/*"
-  ]
+  }
 }

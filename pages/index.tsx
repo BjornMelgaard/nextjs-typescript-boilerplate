@@ -1,5 +1,5 @@
 import * as React from 'react'
-import App from '../containers/App'
+import App from 'containers/App'
 
 const style = `
   img {
@@ -18,7 +18,7 @@ const style = `
   }
 `
 
-const title: string = 'asdf'
+const title = 'asdf'
 
 export default function Index (): JSX.Element {
   return (
