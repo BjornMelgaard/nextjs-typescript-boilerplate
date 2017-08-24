@@ -1,5 +1,5 @@
-import * as React from "react"
-import Head from 'next/head';
+import * as React from 'react'
+import Head from 'next/head'
 
 export interface AppProps {
   title: string,
@@ -22,4 +22,3 @@ export default function App ({
     </div>
   )
 }
-
