@@ -1,5 +1,5 @@
 import * as React from 'react'
-import App from '../app/containers/App'
+import App from 'containers/App'
 
 const style = `
   img {

@@ -1,4 +1,9 @@
 {
   "defaultSeverity": "error",
-  "extends": ["tslint-config-standard", "tslint-react", "tslint-immutable"]
+  "extends": [
+    "tslint-config-standard",
+    "tslint-react",
+    "tslint-immutable",
+    "tslint-consistent-codestyle"
+  ]
 }
