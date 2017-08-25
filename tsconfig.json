@@ -5,14 +5,13 @@
     "jsx": "react",
     "strict": true,
     "allowJs": true,
-    "strict": true,
     "moduleResolution": "node",
     "sourceMap": true,
     "baseUrl": "./",
     "paths": {
-      "pages/*": ["./pages/*"]
+      "pages/*": ["./pages/*"],
       "components/*": ["app/components/*"],
-      "containers/*": ["app/containers/*"],
+      "containers/*": ["app/containers/*"]
     }
   }
 }
