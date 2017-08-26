@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Head from 'next/head'
 
-import Logo from '~/components/Logo'
+import Logo from 'components/Logo'
 
 export interface AppProps {
   title: string,

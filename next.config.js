@@ -1,5 +1,5 @@
 const path = require('path')
-const { TsConfigPathsPlugin } = require('awesome-typescript-loader');
+const ROOT_PATH = path.resolve(__dirname);
 
 const babelLoader = {
   loader: 'babel-loader',
@@ -18,7 +18,7 @@ const typescriptLoader = {
   use: [
     emitLoader,
     babelLoader,
-    'awesome-typescript-loader'
+    'ts-loader'
   ],
   exclude: /node_modules/,
   include: [
@@ -52,12 +52,15 @@ module.exports = {
     // Add typescript rules
     config.module.rules = config.module.rules.concat(typescriptLoader)
 
-    // Add plugins
-    config.plugins = config.plugins || []
-    config.plugins = [
-      ...config.plugins,
-      new TsConfigPathsPlugin() // to use paths and baseUrl
-    ]
+    // Add aliases
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'pages':      path.resolve(ROOT_PATH, 'pages'),
+      'components': path.resolve(ROOT_PATH, 'app/components'),
+      'containers': path.resolve(ROOT_PATH, 'app/containers')
+    }
+
+    console.log(config.resolve.alias)
 
     return config
   }
