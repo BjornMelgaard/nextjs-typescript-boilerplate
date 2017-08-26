@@ -9,9 +9,10 @@
     "sourceMap": true,
     "baseUrl": "./",
     "paths": {
-      "pages/*": ["./pages/*"],
-      "components/*": ["app/components/*"],
-      "containers/*": ["app/containers/*"]
-    }
+      "~/*": ["./app/*"]
+    },
+
+    "noImplicitAny": true,
+    "removeComments": true
   }
 }

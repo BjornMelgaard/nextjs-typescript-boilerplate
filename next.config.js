@@ -1,4 +1,5 @@
 const path = require('path')
+const { TsConfigPathsPlugin } = require('awesome-typescript-loader');
 
 const babelLoader = {
   loader: 'babel-loader',
@@ -17,7 +18,7 @@ const typescriptLoader = {
   use: [
     emitLoader,
     babelLoader,
-    'ts-loader'
+    'awesome-typescript-loader'
   ],
   exclude: /node_modules/,
   include: [
@@ -50,6 +51,14 @@ module.exports = {
 
     // Add typescript rules
     config.module.rules = config.module.rules.concat(typescriptLoader)
+
+    // Add plugins
+    config.plugins = config.plugins || []
+    config.plugins = [
+      ...config.plugins,
+      new TsConfigPathsPlugin() // to use paths and baseUrl
+    ]
+
     return config
   }
 }

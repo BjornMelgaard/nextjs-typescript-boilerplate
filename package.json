@@ -11,11 +11,11 @@
     "lint:fix": "tslint --fix --type-check -c tslint.json -p tsconfig.json 'app/**/*.{ts,tsx}'"
   },
   "dependencies": {
+    "awesome-typescript-loader": "^3.2.3",
     "express": "^4.15.4",
     "next": "https://github.com/BjornMelgaard/next.js",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "ts-loader": "^2.3.3",
     "typescript": "^2.4.2"
   },
   "devDependencies": {
