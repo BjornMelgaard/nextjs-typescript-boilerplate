@@ -37,6 +37,10 @@ module.exports = {
     'tsx'
   ],
   webpack: (config) => {
+    config.resolve.alias = {
+      'components': __dirname + '/app/components',
+      'containers': __dirname + '/app/containers'
+    }
     // Resolve to next babel-loader options
     let {
       options
@@ -51,16 +55,6 @@ module.exports = {
 
     // Add typescript rules
     config.module.rules = config.module.rules.concat(typescriptLoader)
-
-    // Add aliases
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      'pages':      path.resolve(ROOT_PATH, 'pages'),
-      'components': path.resolve(ROOT_PATH, 'app/components'),
-      'containers': path.resolve(ROOT_PATH, 'app/containers')
-    }
-
-    console.log(config.resolve.alias)
 
     return config
   }

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "express": "^4.15.4",
+    "module-alias": "^2.0.1",
     "next": "https://github.com/BjornMelgaard/next.js",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
