@@ -1,5 +1,5 @@
 const path = require('path')
-const ROOT_PATH = path.resolve(__dirname);
+const ROOT_PATH = path.resolve(__dirname)
 
 const babelLoader = {
   loader: 'babel-loader',
@@ -38,8 +38,8 @@ module.exports = {
   ],
   webpack: (config) => {
     config.resolve.alias = {
-      'components': __dirname + '/app/components',
-      'containers': __dirname + '/app/containers'
+      'components': path.resolve(ROOT_PATH, 'app/components'),
+      'containers': path.resolve(ROOT_PATH, 'app/containers')
     }
     // Resolve to next babel-loader options
     let {

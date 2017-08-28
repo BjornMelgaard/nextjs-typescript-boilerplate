@@ -1,14 +1,16 @@
 const express = require('express')
 const next = require('next')
+const moduleAlias = require('module-alias')
+const path = require('path')
+const ROOT_PATH = path.resolve(__dirname)
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
-const moduleAlias = require('module-alias')
 
-moduleAlias.addAlias('components', __dirname + '/../.next/dist/app/components')
-moduleAlias.addAlias('containers',  __dirname + '/../.next/dist/app/containers')
+moduleAlias.addAlias('components', path.resolve(ROOT_PATH, '../.next/dist/app/components'))
+moduleAlias.addAlias('containers', path.resolve(ROOT_PATH, '../.next/dist/app/containers'))
 
 app.prepare()
 .then(() => {
