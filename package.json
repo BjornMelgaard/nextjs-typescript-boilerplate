@@ -12,11 +12,15 @@
   },
   "dependencies": {
     "express": "^4.15.4",
+    "extract-text-webpack-plugin": "^3.0.0",
     "next": "https://github.com/BjornMelgaard/next.js",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "ts-loader": "^2.3.4",
-    "typescript": "^2.4.2"
+    "typescript": "^2.4.2",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.18.2",
+    "webpack-merge": "^4.1.0"
   },
   "devDependencies": {
     "@types/next": "^2.4.2",
