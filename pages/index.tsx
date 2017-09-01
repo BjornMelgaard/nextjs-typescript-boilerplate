@@ -24,7 +24,6 @@ export default function Index (): JSX.Element {
   return (
     <App title={title}>
       <div className='myDiv'>
-        <img src='/static/pueue.png' />
         <h1>Welcome to Next.js + Typescript Boilerplate!!!</h1>
       </div>
       <style>{style}</style>

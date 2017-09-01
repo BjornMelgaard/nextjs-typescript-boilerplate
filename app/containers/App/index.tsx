@@ -8,20 +8,20 @@ export interface AppProps {
   children: JSX.Element[]
 }
 
-export default function App ({
+const App: React.SFC<AppProps> = ({
   title,
   children
-}: AppProps): JSX.Element {
-  return (
+}) => (
+  <div>
+    <Head>
+      <title>{title}</title>
+      <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+    </Head>
     <div>
-      <Head>
-        <title>{title}</title>
-        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-      </Head>
-      <div>
-        <Logo />
-        {children}
-      </div>
+      <Logo />
+      {children}
     </div>
-  )
-}
+  </div>
+)
+
+export default App

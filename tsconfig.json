@@ -16,5 +16,8 @@
 
     "noImplicitAny": true,
     "removeComments": true
-  }
+  },
+  "include": [
+    "app/typings/**/*"
+  ]
 }

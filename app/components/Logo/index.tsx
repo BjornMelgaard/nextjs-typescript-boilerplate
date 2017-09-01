@@ -1,9 +1,9 @@
 import * as React from 'react'
+// import logoSrc from './pueue.png'
+const logoSrc = require('./pueue.png')
 
 export default function App (): JSX.Element {
   return (
-    <div>
-      im logo
-    </div>
+    <img src={logoSrc} alt='logo' />
   )
 }
