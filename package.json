@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "postinstall": "ln -f -s ../next/dist/bin/next node_modules/.bin/next",
+    "precommit": "yarn run format && git add --all && yarn run lint",
     "build": "next build",
     "dev": "node server/index.js",
     "start": "NODE_ENV=production node server/index.js",
@@ -12,18 +13,6 @@
     "format:ts": "yarn run format:base --  --parser typescript '{app,pages}/**/*.{ts,tsx}'",
     "format:js": "yarn run format:base -- '{server}/**/*.js' '*.js'",
     "format": "yarn run format:ts && yarn run format:js"
-  },
-  "lint-staged": {
-    "linters": {
-      "*.{ts,tsx}": [
-        "yarn run format:base -- --parser typescript",
-        "git add"
-      ],
-      "*.js": [
-        "yarn run format:base --",
-        "git add"
-      ]
-    }
   },
   "dependencies": {
     "express": "^4.15.4",

@@ -1,7 +1,7 @@
 export default function invariant(
   cond: any,
   message: string,
-  informationOrConstructor?: ErrorConstructor | {[key: string]: any}
+  informationOrConstructor?: ErrorConstructor | { [key: string]: any }
 ) {
   if (cond) return
 

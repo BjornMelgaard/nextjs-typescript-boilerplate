@@ -16,10 +16,7 @@ const typescriptLoader = {
   test: /\.tsx?$/,
   use: [emitLoader, babelLoader, 'ts-loader'],
   exclude: /node_modules/,
-  include: [
-    paths.inRootDir('pages'),
-    paths.inRootDir('app'),
-  ],
+  include: [paths.rootPath, paths.inRootDir('pages'), paths.inRootDir('app')],
 }
 
 module.exports = {
