@@ -1,6 +1,7 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
+console.log('here');
 export default class MyDocument extends Document {
   render() {
     const sheet = new ServerStyleSheet()
