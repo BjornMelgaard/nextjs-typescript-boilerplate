@@ -7,7 +7,23 @@
     "build": "next build",
     "dev": "node server/index.js",
     "start": "NODE_ENV=production node server/index.js",
-    "lint": "tslint --type-check -c tslint.json -p tsconfig.json '{app,pages}/**/*.{ts,tsx}'"
+    "lint": "tslint --type-check -c tslint.json -p tsconfig.json '{app,pages}/*.{ts,tsx}'",
+    "format:base": "prettier --write --no-semi --single-quote --trailing-comma es5",
+    "format:ts": "yarn run format:base --  --parser typescript '{app,pages}/**/*.{ts,tsx}'",
+    "format:js": "yarn run format:base -- '{server}/**/*.js' '*.js'",
+    "format": "yarn run format:ts && yarn run format:js"
+  },
+  "lint-staged": {
+    "linters": {
+      "*.{ts,tsx}": [
+        "yarn run format:base -- --parser typescript",
+        "git add"
+      ],
+      "*.js": [
+        "yarn run format:base --",
+        "git add"
+      ]
+    }
   },
   "dependencies": {
     "express": "^4.15.4",
@@ -15,6 +31,7 @@
     "next": "https://github.com/BjornMelgaard/next.js",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "styled-components": "^2.1.2",
     "ts-loader": "^2.3.4",
     "typescript": "^2.4.2"
   },
@@ -23,9 +40,14 @@
     "@types/node": "^8.0.24",
     "@types/react": "^16.0.5",
     "@types/react-dom": "^15.5.4",
+    "awesome-typescript-loader": "^3.2.3",
     "file-loader": "^0.11.2",
+    "husky": "^0.14.3",
     "image-webpack-loader": "^3.4.0",
+    "lint-staged": "^4.0.4",
+    "prettier": "^1.6.1",
     "tslint": "^5.6.0",
+    "tslint-config-prettier": "^1.5.0",
     "tslint-config-standard": "^6.0.1",
     "tslint-consistent-codestyle": "^1.6.0",
     "tslint-immutable": "^4.1.0",

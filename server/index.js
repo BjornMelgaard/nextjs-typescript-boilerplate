@@ -1,22 +1,21 @@
 const express = require('express')
 const next = require('next')
 const moduleAlias = require('module-alias')
-const path = require('path')
-const ROOT_PATH = path.resolve(__dirname)
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
-const utils = require('./utils')
+const paths = require('./paths')
 
-moduleAlias.addAlias('components', utils.inDotNextDir('dist/app/components'))
-moduleAlias.addAlias('containers', utils.inDotNextDir('dist/app/containers'))
+// XXX must be synced with tsconfig paths
+moduleAlias.addAlias('components', paths.inDotNextDir('dist/app/components'))
+moduleAlias.addAlias('containers', paths.inDotNextDir('dist/app/containers'))
 
 app.prepare()
 .then(() => {
   const server = express()
-  server.use('/_next/static', express.static(utils.inDotNextDir('static')))
+  server.use('/_next/static', express.static(paths.inDotNextDir('static')))
 
   server.get('*', (req, res) => {
     return handle(req, res)

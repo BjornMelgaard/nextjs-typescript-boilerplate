@@ -1,32 +1,11 @@
 import * as React from 'react'
-import App from 'containers/App'
+import styled from 'styled-components'
 
-const style = `
-  img {
-    width: 300px;
-    height: 300px;
-    }
-  h1 {
-    font-family: Arial;
-  }
-  .myDiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
+const Title = styled.h1`
+  color: red;
+  font-size: 50px;
 `
 
-const title = 'asdf'
-
-export default function Index (): JSX.Element {
-  return (
-    <App title={title}>
-      <div className='myDiv'>
-        <h1>Welcome to Next.js + Typescript Boilerplate!!!</h1>
-      </div>
-      <style>{style}</style>
-    </App>
-  )
+export default function Index(): JSX.Element {
+  return <Title>My page</Title>
 }

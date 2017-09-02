@@ -1,56 +1,44 @@
-const path = require('path')
-const ROOT_PATH = path.resolve(__dirname)
+const paths = require('./server/paths')
 
 const babelLoader = {
   loader: 'babel-loader',
-  options: {}
+  options: {},
 }
 
 const emitLoader = {
   loader: 'emit-file-loader',
   options: {
-    name: 'dist/[path][name].js'
-  }
+    name: 'dist/[path][name].js',
+  },
 }
 
 const typescriptLoader = {
   test: /\.tsx?$/,
-  use: [
-    emitLoader,
-    babelLoader,
-    'ts-loader'
-  ],
+  use: [emitLoader, babelLoader, 'ts-loader'],
   exclude: /node_modules/,
   include: [
-    __dirname,
-    path.join(__dirname, 'pages'),
-    path.join(__dirname, 'app'),
-  ]
+    paths.inRootDir('pages'),
+    paths.inRootDir('app'),
+  ],
 }
 
 module.exports = {
   // Add typescript extensions
-  pagesExtensions: [
-    'js',
-    'json',
-    'ts',
-    'tsx'
-  ],
-  webpack: (config) => {
+  pagesExtensions: ['js', 'json', 'ts', 'tsx'],
+  webpack: config => {
+    // XXX must be synced with tsconfig paths
     config.resolve.alias = {
-      'components': path.resolve(ROOT_PATH, 'app/components'),
-      'containers': path.resolve(ROOT_PATH, 'app/containers')
+      components: paths.inRootDir('app/components'),
+      containers: paths.inRootDir('app/containers'),
     }
     // Resolve to next babel-loader options
-    let {
-      options
-    } = config.module.rules.find((x) => x.loader === 'babel-loader')
+    let { options } = config.module.rules.find(x => x.loader === 'babel-loader')
     babelLoader.options = options
 
     // Resolve to next emit-file-loader options
-    let {
-      transform
-    } = config.module.rules.find((x) => x.loader === 'emit-file-loader').options
+    let { transform } = config.module.rules.find(
+      x => x.loader === 'emit-file-loader'
+    ).options
     emitLoader.options.transform = transform
 
     // Add typescript rules
@@ -65,8 +53,8 @@ module.exports = {
         {
           loader: 'emit-file-loader',
           options: {
-            name: 'dist/[path][name].[ext]'
-          }
+            name: 'dist/[path][name].[ext]',
+          },
         },
         // this will create image copy, that we will use,
         // output path - '/.next/static/longhash.png'
@@ -76,32 +64,31 @@ module.exports = {
           options: {
             outputPath: 'static/',
             publicPath: '/_next/',
-            limit: 1000
-          }
+            limit: 1000,
+          },
         },
         {
           loader: 'image-webpack-loader',
           options: {
             gifsicle: {
-              interlaced: false
+              interlaced: false,
             },
             optipng: {
-              optimizationLevel: 7
+              optimizationLevel: 7,
             },
             pngquant: {
               quality: '65-90',
-              speed: 4
+              speed: 4,
             },
             mozjpeg: {
               progressive: true,
-              quality: 65
-            }
-          }
-        }
-      ]
+              quality: 65,
+            },
+          },
+        },
+      ],
     })
 
     return config
-  }
+  },
 }
-
